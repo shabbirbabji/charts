@@ -4,6 +4,11 @@ metadata:
   name: {{ template "fullname" . }}
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+  annotations: 
+    app.kubernetes.io/managed-by: "Helm"
+    meta.helm.sh/release-name: "busybox"
+    meta.helm.sh/release-namespace: "busybox"
+
 spec:
   replicas: {{ .Values.replicaCount }}
   template:
